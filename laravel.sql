@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2021. Dec 05. 18:06
+-- Létrehozás ideje: 2021. Dec 04. 16:04
 -- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 7.4.25
+-- PHP verzió: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,14 @@ CREATE TABLE `contact` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- A tábla adatainak kiíratása `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `phone_number`, `email`, `msg`, `created_at`, `updated_at`) VALUES
+(1, 'Donat Feher', '705206210', 'feherdonat99@gmail.com', 'asd', '2021-12-05 13:19:42', '2021-12-05 13:19:42'),
+(2, 'Edvard Feher', '705206299', 'feheredvard@gmail.com', 'asd', '2021-12-05 13:19:42', '2021-12-05 13:19:42');
 
 -- --------------------------------------------------------
 
@@ -204,8 +212,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Donát Fehér', 'donat.feher@admin.com', NULL, '$2y$10$MHHIAmVqpCJAlWNih/vHsusmBzZ4/3mid24BSv7eMvYkF4wtp1dU2', NULL, NULL, NULL),
-(2, 'Fehér Edvárd', 'feheredvard@gmail.com', NULL, '$2y$10$ktB.1RBeDtYJV2lxKdobP.7bJ.ZXq0SMiJm87/7heDP0GHZpqkJY6', NULL, NULL, NULL);
+(1, 'Fehér Donát', 'feher.donat@admin.com', NULL, '$2y$10$Yg75W.xGd/i9c3wdLY95TO2Y1KME3IPKk4wHHdGRqagbrFVWSHs1u', NULL, NULL, NULL),
+(2, 'Fehér Edvárd', 'feheredvard@gmail.com', NULL, '$2y$10$h8tDv3l4GLioHR9NCUZVvOcEm7WTeaN6XK2tj.3CQnMrJbduBjFuG', NULL, NULL, NULL);
 
 --
 -- Indexek a kiírt táblákhoz
@@ -292,7 +300,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT a táblához `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT a táblához `failed_jobs`
